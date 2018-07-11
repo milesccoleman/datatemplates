@@ -13,11 +13,11 @@
         <img v-bind:src="'https://image.tmdb.org/t/p/w150_and_h225_bestv2'+result.poster_path" v-bind:alt="result.original_title + ' Poster'" class="poster-image">
         <h2 class="title"><a v-bind:href="'https://www.themoviedb.org/movie/'+result.id">{{result.title}}</a></h2>
         <div class="ratings">
-          <span v-if="result.vote_average > 8" class="rating-category sure-bet">Sure Bet</span>
-          <span v-else-if="(result.vote_average >= 7.8)" class="rating-category might-be-worth-it">Might Be Worth It</span>
-          <span v-else-if="(result.vote_average >= 7.7)" class="rating-category a-gamble">A Gamble</span>
-          <span v-else-if="(result.vote_average <= 7.6)" class="rating-category dont-waste-your-time">Don't Waste Your Time</span>
-          <span class="vote-average">{{result.vote_average}}</span> with <span class="vote-count">{{result.vote_count}}</span> votes
+          <span v-if="result.vote_average > 8" class="rating-category sure-bet">Super Popular</span>
+          <span v-else-if="(result.vote_average >= 7.8)" class="rating-category might-be-worth-it">Very Popular</span>
+          <span v-else-if="(result.vote_average >= 7.7)" class="rating-category a-gamble">Popular</span>
+          <span v-else-if="(result.vote_average <= 7.6)" class="rating-category dont-waste-your-time">Good</span>
+          <span class="vote-average">Rating: {{result.vote_average}}</span> - <span class="vote-count">{{result.vote_count}}</span> votes
 
         </div>
         <div class="trending">
@@ -49,7 +49,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #background {
-background: linear-gradient(270deg, #f0f50b, #82e60e);
+background: linear-gradient(270deg, #1fd27c, #13d4e8);
 background-size: 400% 400%;
 
 -webkit-animation: AnimationName 30s ease infinite;
@@ -115,19 +115,19 @@ ul {
 }
 
 .rating-category.sure-bet {
-  background: purple;
+  background: #f46542;
 }
 
 .rating-category.might-be-worth-it {
-  background: blue;
+  background: #cccc02;
 }
 
 .rating-category.a-gamble {
-  background: goldenrod;
+  background: #01c11e;
 }
 
 .rating-category.dont-waste-your-time {
-  background: brown;
+  background: #02afce;
 }
 
 .search {
